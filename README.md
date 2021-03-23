@@ -137,3 +137,15 @@ You are required to submit the following:
 
 - - -
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+
+
+
+1. Install my sql and inquirer 
+2. Add console.table - documentation listed above
+3. Create sql queries
+  a. use seed.sql to pre-populate table
+  b. needs to have: departments, roles, employees
+  c. be able to view, add, delete, and update
+  d. view total of the departments budget - BONUSS
+4. sql joins
