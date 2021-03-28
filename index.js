@@ -4,14 +4,28 @@ const inquirer = require('inquirer');
 
 
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-  
-    port: 3306,
-  
-    user: 'root',
-  
-    password: 'Sheba1492!',
-    database: 'seed_db',
-  });
-  
+const songSearch = () => {
+  inquirer
+    .prompt({
+      name: 'song',
+      type: 'input',
+      message: 'What song would you like to look for?',
+    })
+    .then((answer) => {
+      console.log(answer.song);
+      connection.query(
+        'SELECT * FROM top5000 WHERE ?',
+        { song: answer.song },
+        (err, res) => {
+          if (res[0]) {
+            console.log(
+              `Position: ${res[0].position} || Song: ${res[0].song} || Artist: ${res[0].artist} || Year: ${res[0].year}`
+            );
+          } else {
+            console.error(`No results for ${answer.song}`);
+          }
+          runSearch();
+        }
+      );
+    });
+};
