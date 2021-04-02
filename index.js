@@ -59,7 +59,9 @@ const startProgram = () => {
             // }
           );
       } if(answer.start === "view role"){
-        
+        connection.query(
+          'SELECT * FROM '
+        )
       }
       
     });
